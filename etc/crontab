@@ -1,0 +1,2 @@
+#### dehydrated
+5,10 8-22/6 * * * root /root/dehydrated -f /dehydrated/config --cron > /proc/1/fd/1 2> /proc/1/fd/2
