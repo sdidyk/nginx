@@ -3,8 +3,10 @@ FROM ubuntu
 ADD https://github.com/just-containers/s6-overlay/releases/download/v2.0.0.1/s6-overlay-amd64.tar.gz /tmp/
 RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C / --exclude='./bin' && tar xzf /tmp/s6-overlay-amd64.tar.gz -C /usr ./bin
 
-RUN apt-get update \
+ENV TZ=Europe/Moscow
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
   && apt-get install -y \
+    tzdata \
     net-tools \
     curl \
     socat \
