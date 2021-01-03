@@ -1,6 +1,6 @@
 FROM ubuntu
 
-ADD https://github.com/just-containers/s6-overlay/releases/download/v2.0.0.1/s6-overlay-amd64.tar.gz /tmp/
+ADD https://github.com/just-containers/s6-overlay/releases/download/v2.1.0.2/s6-overlay-amd64.tar.gz /tmp/
 RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C / --exclude='./bin' && tar xzf /tmp/s6-overlay-amd64.tar.gz -C /usr ./bin
 
 ENV TZ=Europe/Moscow
@@ -24,4 +24,5 @@ COPY etc/ /etc
 
 ENTRYPOINT ["/init"]
 
+EXPOSE 80
 EXPOSE 443
