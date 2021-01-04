@@ -20,6 +20,8 @@ RUN curl https://ssl-config.mozilla.org/ffdhe2048.txt > /etc/nginx/dhparam
 
 RUN curl https://raw.githubusercontent.com/dehydrated-io/dehydrated/master/dehydrated > /root/dehydrated
 
+RUN mkdir -p /var/www/dehydrated
+
 COPY etc/ /etc
 
 ENTRYPOINT ["/init"]
