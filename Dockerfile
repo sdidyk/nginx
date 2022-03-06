@@ -13,6 +13,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     cron \
     procps \
     nginx \
+    bind9 \
+    dnsutils \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /tmp/*
 
@@ -28,3 +30,5 @@ ENTRYPOINT ["/init"]
 
 EXPOSE 80
 EXPOSE 443
+EXPOSE 53
+EXPOSE 53/udp
